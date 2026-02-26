@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kataloog | IDA Stuudio</title>
+    <meta
+      name="description"
+      content="IDA Stuudio toodete kataloog otsingu, filtrite ja sorteerimisega."
+    />
+    <link rel="stylesheet" href="./kataloog.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#productsGrid">Liigu toodete juurde</a>
+
+    <header class="page-header">
+      <div class="wrap">
+        <p class="eyebrow">IDA Stuudio</p>
+        <h1>Kataloog</h1>
+        <p class="subtitle">Leia sobiv toode kiiresti otsingu ja filtritega.</p>
+        <a class="home-link" href="/" aria-label="Mine avalehele">Tagasi avalehele</a>
+      </div>
+    </header>
+
+    <main class="wrap" id="mainContent">
+      <section class="controls" aria-label="Toodete filtreerimine ja sorteerimine">
+        <div class="control-group">
+          <label for="searchInput">Otsi toodet</label>
+          <input
+            type="search"
+            id="searchInput"
+            name="search"
+            placeholder="Nt disain, veeb, plakat..."
+            autocomplete="off"
+            aria-describedby="resultsInfo"
+          />
+        </div>
+
+        <div class="control-group">
+          <label for="categorySelect">Kategooria</label>
+          <select id="categorySelect" name="category" aria-label="Vali kategooria">
+            <option value="all">Kõik kategooriad</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="sortSelect">Sorteeri hinna järgi</label>
+          <select id="sortSelect" name="sort" aria-label="Sorteeri hinna järgi">
+            <option value="price-asc">Hind: madalamast kõrgemani</option>
+            <option value="price-desc">Hind: kõrgemast madalamani</option>
+          </select>
+        </div>
+      </section>
+
+      <p id="resultsInfo" class="results-info" aria-live="polite" aria-atomic="true"></p>
+
+      <section
+        id="productsGrid"
+        class="products-grid"
+        aria-label="Toodete loend"
+        tabindex="-1"
+      ></section>
+    </main>
+
+    <script type="module" src="./kataloog.js"></script>
+  </body>
+</html>
