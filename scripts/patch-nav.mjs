@@ -4,12 +4,6 @@ import path from 'node:path';
 const rootDir = process.cwd();
 const publicDir = path.join(rootDir, 'public');
 const indexFile = path.join(publicDir, 'index.html');
-const kataloogHref = '/kataloog/';
-
-const CHATBOT_API_BASE = 'https://ida-chatbot.onrender.com';
-const CHATBOT_SNIPPET =
-  `\n<script>\n  window.IdaChatbotConfig = { apiBase: "${CHATBOT_API_BASE}" };\n</script>\n` +
-  `<script src="${CHATBOT_API_BASE}/widget/embed.js" defer></script>\n`;
 
 function hasKataloogLink(html) {
   return /href=["']\/kataloog\/["']/i.test(html);
@@ -69,14 +63,17 @@ function injectFallbackIntoIndex(html) {
   return { changed: true, html: `${html}\n${fallback}\n` };
 }
 
-function injectChatbot(html) {
-  if (html.includes(CHATBOT_API_BASE)) {
-    return { changed: false, html };
-  }
-  if (/<\/body>/i.test(html)) {
-    return { changed: true, html: html.replace(/<\/body>/i, `${CHATBOT_SNIPPET}</body>`) };
-  }
-  return { changed: true, html: `${html}${CHATBOT_SNIPPET}` };
+function stripChatbot(html) {
+  let cleaned = html;
+  cleaned = cleaned.replace(
+    /<script>\s*window\.IdaChatbotConfig[\s\S]*?<\/script>\s*/gi,
+    ''
+  );
+  cleaned = cleaned.replace(
+    /<script[^>]*src=["']https:\/\/ida-chatbot\.onrender\.com\/widget\/embed\.js["'][^>]*><\/script>\s*/gi,
+    ''
+  );
+  return { changed: cleaned !== html, html: cleaned };
 }
 
 async function walkHtmlFiles(dir) {
@@ -112,6 +109,12 @@ async function main() {
     let content = await readFile(filePath, 'utf8');
     let dirty = false;
 
+    const { changed: strippedChatbot, html: strippedHtml } = stripChatbot(content);
+    if (strippedChatbot) {
+      content = strippedHtml;
+      dirty = true;
+    }
+
     if (!hasKataloogLink(content)) {
       const { changed, html } = injectIntoNav(content);
       if (changed) {
@@ -119,12 +122,6 @@ async function main() {
         dirty = true;
         navPatchedCount += 1;
       }
-    }
-
-    const { changed: chatbotChanged, html: chatbotHtml } = injectChatbot(content);
-    if (chatbotChanged) {
-      content = chatbotHtml;
-      dirty = true;
     }
 
     if (dirty) {
