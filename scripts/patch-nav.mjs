@@ -6,6 +6,11 @@ const publicDir = path.join(rootDir, 'public');
 const indexFile = path.join(publicDir, 'index.html');
 const kataloogHref = '/kataloog/';
 
+const CHATBOT_API_BASE = 'https://ida-chatbot.onrender.com';
+const CHATBOT_SNIPPET =
+  `\n<script>\n  window.IdaChatbotConfig = { apiBase: "${CHATBOT_API_BASE}" };\n</script>\n` +
+  `<script src="${CHATBOT_API_BASE}/widget/embed.js" defer></script>\n`;
+
 function hasKataloogLink(html) {
   return /href=["']\/kataloog\/["']/i.test(html);
 }
@@ -64,6 +69,16 @@ function injectFallbackIntoIndex(html) {
   return { changed: true, html: `${html}\n${fallback}\n` };
 }
 
+function injectChatbot(html) {
+  if (html.includes(CHATBOT_API_BASE)) {
+    return { changed: false, html };
+  }
+  if (/<\/body>/i.test(html)) {
+    return { changed: true, html: html.replace(/<\/body>/i, `${CHATBOT_SNIPPET}</body>`) };
+  }
+  return { changed: true, html: `${html}${CHATBOT_SNIPPET}` };
+}
+
 async function walkHtmlFiles(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   const files = [];
@@ -94,15 +109,26 @@ async function main() {
   let navPatchedCount = 0;
 
   for (const filePath of htmlFiles) {
-    const content = await readFile(filePath, 'utf8');
-    if (hasKataloogLink(content)) {
-      continue;
+    let content = await readFile(filePath, 'utf8');
+    let dirty = false;
+
+    if (!hasKataloogLink(content)) {
+      const { changed, html } = injectIntoNav(content);
+      if (changed) {
+        content = html;
+        dirty = true;
+        navPatchedCount += 1;
+      }
     }
 
-    const { changed, html } = injectIntoNav(content);
-    if (changed) {
-      await writeFile(filePath, html, 'utf8');
-      navPatchedCount += 1;
+    const { changed: chatbotChanged, html: chatbotHtml } = injectChatbot(content);
+    if (chatbotChanged) {
+      content = chatbotHtml;
+      dirty = true;
+    }
+
+    if (dirty) {
+      await writeFile(filePath, content, 'utf8');
     }
   }
 
