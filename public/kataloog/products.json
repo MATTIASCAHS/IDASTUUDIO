@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "name": "Toode 1",
+    "price": 25.5,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 1.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 2,
+    "name": "Toode 2",
+    "price": 32,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 2.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 3,
+    "name": "Toode 3",
+    "price": 38.5,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 3.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 4,
+    "name": "Toode 4",
+    "price": 45,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 4.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 5,
+    "name": "Toode 5",
+    "price": 52.7,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 5.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 6,
+    "name": "Toode 6",
+    "price": 59.2,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 6.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 7,
+    "name": "Toode 7",
+    "price": 65.7,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 7.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 8,
+    "name": "Toode 8",
+    "price": 72.2,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 8.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 9,
+    "name": "Toode 9",
+    "price": 78.7,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 9.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 10,
+    "name": "Toode 10",
+    "price": 86.4,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 10.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 11,
+    "name": "Toode 11",
+    "price": 92.9,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 11.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 12,
+    "name": "Toode 12",
+    "price": 99.4,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 12.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 13,
+    "name": "Toode 13",
+    "price": 105.9,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 13.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 14,
+    "name": "Toode 14",
+    "price": 112.4,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 14.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 15,
+    "name": "Toode 15",
+    "price": 120.1,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 15.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 16,
+    "name": "Toode 16",
+    "price": 126.6,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 16.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 17,
+    "name": "Toode 17",
+    "price": 22.6,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 17.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 18,
+    "name": "Toode 18",
+    "price": 29.1,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 18.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 19,
+    "name": "Toode 19",
+    "price": 35.6,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 19.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 20,
+    "name": "Toode 20",
+    "price": 43.3,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 20.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 21,
+    "name": "Toode 21",
+    "price": 49.8,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 21.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 22,
+    "name": "Toode 22",
+    "price": 56.3,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 22.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 23,
+    "name": "Toode 23",
+    "price": 62.8,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 23.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 24,
+    "name": "Toode 24",
+    "price": 69.3,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 24.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 25,
+    "name": "Toode 25",
+    "price": 77,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 25.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 26,
+    "name": "Toode 26",
+    "price": 83.5,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 26.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 27,
+    "name": "Toode 27",
+    "price": 90,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 27.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 28,
+    "name": "Toode 28",
+    "price": 96.5,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 28.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 29,
+    "name": "Toode 29",
+    "price": 103,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 29.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 30,
+    "name": "Toode 30",
+    "price": 110.7,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 30.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 31,
+    "name": "Toode 31",
+    "price": 117.2,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 31.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 32,
+    "name": "Toode 32",
+    "price": 123.7,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 32.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 33,
+    "name": "Toode 33",
+    "price": 130.2,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 33.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 34,
+    "name": "Toode 34",
+    "price": 26.2,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 34.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 35,
+    "name": "Toode 35",
+    "price": 33.9,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 35.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 36,
+    "name": "Toode 36",
+    "price": 40.4,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 36.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 37,
+    "name": "Toode 37",
+    "price": 46.9,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 37.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 38,
+    "name": "Toode 38",
+    "price": 53.4,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 38.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 39,
+    "name": "Toode 39",
+    "price": 59.9,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 39.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 40,
+    "name": "Toode 40",
+    "price": 67.6,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 40.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 41,
+    "name": "Toode 41",
+    "price": 74.1,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 41.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 42,
+    "name": "Toode 42",
+    "price": 80.6,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 42.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 43,
+    "name": "Toode 43",
+    "price": 87.1,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 43.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 44,
+    "name": "Toode 44",
+    "price": 93.6,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 44.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 45,
+    "name": "Toode 45",
+    "price": 101.3,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 45.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 46,
+    "name": "Toode 46",
+    "price": 107.8,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 46.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 47,
+    "name": "Toode 47",
+    "price": 114.3,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 47.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 48,
+    "name": "Toode 48",
+    "price": 120.8,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 48.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 49,
+    "name": "Toode 49",
+    "price": 127.3,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 49.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 50,
+    "name": "Toode 50",
+    "price": 135,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 50.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 51,
+    "name": "Toode 51",
+    "price": 31,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 51.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 52,
+    "name": "Toode 52",
+    "price": 37.5,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 52.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 53,
+    "name": "Toode 53",
+    "price": 44,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 53.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 54,
+    "name": "Toode 54",
+    "price": 50.5,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 54.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 55,
+    "name": "Toode 55",
+    "price": 58.2,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 55.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 56,
+    "name": "Toode 56",
+    "price": 64.7,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 56.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 57,
+    "name": "Toode 57",
+    "price": 71.2,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 57.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 58,
+    "name": "Toode 58",
+    "price": 77.7,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 58.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 59,
+    "name": "Toode 59",
+    "price": 84.2,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 59.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 60,
+    "name": "Toode 60",
+    "price": 91.9,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 60.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 61,
+    "name": "Toode 61",
+    "price": 98.4,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 61.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 62,
+    "name": "Toode 62",
+    "price": 104.9,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 62.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 63,
+    "name": "Toode 63",
+    "price": 111.4,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 63.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 64,
+    "name": "Toode 64",
+    "price": 117.9,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 64.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 65,
+    "name": "Toode 65",
+    "price": 125.6,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 65.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 66,
+    "name": "Toode 66",
+    "price": 132.1,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 66.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 67,
+    "name": "Toode 67",
+    "price": 138.6,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 67.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 68,
+    "name": "Toode 68",
+    "price": 34.6,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 68.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 69,
+    "name": "Toode 69",
+    "price": 41.1,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 69.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 70,
+    "name": "Toode 70",
+    "price": 48.8,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 70.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 71,
+    "name": "Toode 71",
+    "price": 55.3,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 71.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 72,
+    "name": "Toode 72",
+    "price": 61.8,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 72.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 73,
+    "name": "Toode 73",
+    "price": 68.3,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 73.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 74,
+    "name": "Toode 74",
+    "price": 74.8,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 74.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 75,
+    "name": "Toode 75",
+    "price": 82.5,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 75.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 76,
+    "name": "Toode 76",
+    "price": 89,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 76.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 77,
+    "name": "Toode 77",
+    "price": 95.5,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 77.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 78,
+    "name": "Toode 78",
+    "price": 102,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 78.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 79,
+    "name": "Toode 79",
+    "price": 108.5,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 79.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 80,
+    "name": "Toode 80",
+    "price": 116.2,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 80.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 81,
+    "name": "Toode 81",
+    "price": 122.7,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 81.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 82,
+    "name": "Toode 82",
+    "price": 129.2,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 82.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 83,
+    "name": "Toode 83",
+    "price": 135.7,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 83.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 84,
+    "name": "Toode 84",
+    "price": 142.2,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 84.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 85,
+    "name": "Toode 85",
+    "price": 39.4,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 85.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 86,
+    "name": "Toode 86",
+    "price": 45.9,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 86.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 87,
+    "name": "Toode 87",
+    "price": 52.4,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 87.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 88,
+    "name": "Toode 88",
+    "price": 58.9,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 88.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 89,
+    "name": "Toode 89",
+    "price": 65.4,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 89.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 90,
+    "name": "Toode 90",
+    "price": 73.1,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 90.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 91,
+    "name": "Toode 91",
+    "price": 79.6,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 91.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 92,
+    "name": "Toode 92",
+    "price": 86.1,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 92.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 93,
+    "name": "Toode 93",
+    "price": 92.6,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 93.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 94,
+    "name": "Toode 94",
+    "price": 99.1,
+    "category": "Trukis",
+    "shortDescription": "Praktiline trukis teenuskomplekt projektile 94.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 95,
+    "name": "Toode 95",
+    "price": 106.8,
+    "category": "Sotsiaalmeedia",
+    "shortDescription": "Praktiline sotsiaalmeedia teenuskomplekt projektile 95.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 96,
+    "name": "Toode 96",
+    "price": 113.3,
+    "category": "Pakend",
+    "shortDescription": "Praktiline pakend teenuskomplekt projektile 96.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 97,
+    "name": "Toode 97",
+    "price": 119.8,
+    "category": "Foto",
+    "shortDescription": "Praktiline foto teenuskomplekt projektile 97.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 98,
+    "name": "Toode 98",
+    "price": 126.3,
+    "category": "Illustratsioon",
+    "shortDescription": "Praktiline illustratsioon teenuskomplekt projektile 98.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 99,
+    "name": "Toode 99",
+    "price": 132.8,
+    "category": "Brandidisain",
+    "shortDescription": "Praktiline brandidisain teenuskomplekt projektile 99.",
+    "image": "/kataloog/img/placeholder.svg"
+  },
+  {
+    "id": 100,
+    "name": "Toode 100",
+    "price": 140.5,
+    "category": "Veebileht",
+    "shortDescription": "Praktiline veebileht teenuskomplekt projektile 100.",
+    "image": "/kataloog/img/placeholder.svg"
+  }
+]
