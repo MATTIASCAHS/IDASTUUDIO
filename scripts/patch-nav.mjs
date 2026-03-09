@@ -4,6 +4,14 @@ import path from 'node:path';
 const rootDir = process.cwd();
 const publicDir = path.join(rootDir, 'public');
 const indexFile = path.join(publicDir, 'index.html');
+const INTERNAL_HOST_PATTERN = '(?:https?:)?//(?:www\\.)?idastuudio\\.ee';
+const CHATBOT_RENDER_ORIGIN = 'https://ida-chatbot.onrender.com';
+const CHATBOT_LOCAL_ORIGIN = 'http://localhost:8788';
+const CHATBOT_CONFIG_SCRIPT =
+  `<script id="ida-chatbot-config">(function(){var host=(window.location.hostname||"").toLowerCase().replace(/^\\[|\\]$/g,"");var isLocal=host==="localhost"||host==="127.0.0.1"||host==="0.0.0.0"||host==="::1"||host.endsWith(".localhost");var chatbotOrigin=isLocal?"${CHATBOT_LOCAL_ORIGIN}":"${CHATBOT_RENDER_ORIGIN}";window.__idastuudioWidgetOrigin=chatbotOrigin;window.__idastuudioWidgetConfig={apiBase:chatbotOrigin,brandName:"IDA SISUSTUSPOOD & STUUDIO",storeOrigin:window.location.origin};})();</script>`;
+const CHATBOT_EMBED_SCRIPT =
+  `<script id="ida-chatbot-embed">(function(){var host=(window.location.hostname||"").toLowerCase().replace(/^\\[|\\]$/g,"");var isLocal=host==="localhost"||host==="127.0.0.1"||host==="0.0.0.0"||host==="::1"||host.endsWith(".localhost");var origin=window.__idastuudioWidgetOrigin||(isLocal?"${CHATBOT_LOCAL_ORIGIN}":"${CHATBOT_RENDER_ORIGIN}");window.__idastuudioWidgetOrigin=origin;var script=document.createElement("script");script.src=origin+"/widget/embed.js";script.defer=true;script.setAttribute("data-ida-chatbot-loader","1");document.head.appendChild(script);})();</script>`;
+const LOCAL_CART_SCRIPT = '<script id="ida-local-cart" src="/localhost-cart.js" defer></script>';
 
 function hasKataloogLink(html) {
   return /href=["']\/kataloog\/["']/i.test(html);
@@ -63,6 +71,44 @@ function injectFallbackIntoIndex(html) {
   return { changed: true, html: `${html}\n${fallback}\n` };
 }
 
+function injectLocalScripts(html) {
+  const hasChatbotConfig = /<script[^>]*id=["']ida-chatbot-config["'][^>]*>/i.test(html);
+  const hasChatbotEmbed =
+    /<script[^>]*id=["']ida-chatbot-embed["'][^>]*>/i.test(html) ||
+    /<script[^>]*src=["']https:\/\/ida-chatbot\.onrender\.com\/widget\/embed\.js(?:\?[^"']*)?["'][^>]*><\/script>/i.test(
+      html
+    ) ||
+    /<script[^>]*src=["']http:\/\/localhost:8788\/widget\/embed\.js(?:\?[^"']*)?["'][^>]*><\/script>/i.test(
+      html
+    );
+  const hasLocalCart =
+    /<script[^>]*id=["']ida-local-cart["'][^>]*>/i.test(html) ||
+    /<script[^>]*src=["']\/localhost-cart\.js(?:\?[^"']*)?["'][^>]*><\/script>/i.test(html);
+
+  const scriptsToInject = [];
+  if (!hasChatbotConfig) {
+    scriptsToInject.push(CHATBOT_CONFIG_SCRIPT);
+  }
+  if (!hasChatbotEmbed) {
+    scriptsToInject.push(CHATBOT_EMBED_SCRIPT);
+  }
+  if (!hasLocalCart) {
+    scriptsToInject.push(LOCAL_CART_SCRIPT);
+  }
+
+  if (scriptsToInject.length === 0) {
+    return { changed: false, html };
+  }
+
+  const injection = scriptsToInject.join('\n');
+
+  if (/<\/body>/i.test(html)) {
+    return { changed: true, html: html.replace(/<\/body>/i, `${injection}\n</body>`) };
+  }
+
+  return { changed: true, html: `${html}\n${injection}\n` };
+}
+
 function stripChatbot(html) {
   let cleaned = html;
   cleaned = cleaned.replace(
@@ -73,7 +119,71 @@ function stripChatbot(html) {
     /<script[^>]*src=["']https:\/\/ida-chatbot\.onrender\.com\/widget\/embed\.js["'][^>]*><\/script>\s*/gi,
     ''
   );
+  cleaned = cleaned.replace(
+    /<script[^>]*src=["']http:\/\/localhost:8788\/widget\/embed\.js["'][^>]*><\/script>\s*/gi,
+    ''
+  );
+  cleaned = cleaned.replace(
+    /<script[^>]*src=["']https:\/\/ida-chatbot\.onrender\.com\/widget\/loader\.js(?:\?[^"']*)?["'][^>]*><\/script>\s*/gi,
+    ''
+  );
+  cleaned = cleaned.replace(
+    /<script[^>]*src=["']https:\/\/ida-chatbot\.onrender\.com\/widget\/embed\.js(?:\?[^"']*)?["'][^>]*><\/script>\s*/gi,
+    ''
+  );
+  cleaned = cleaned.replace(
+    /<script[^>]*src=["']http:\/\/localhost:8788\/widget\/embed\.js(?:\?[^"']*)?["'][^>]*><\/script>\s*/gi,
+    ''
+  );
+  cleaned = cleaned.replace(
+    /<script[^>]*id=["']ida-chatbot-config["'][^>]*>[\s\S]*?<\/script>\s*/gi,
+    ''
+  );
+  cleaned = cleaned.replace(
+    /<script[^>]*id=["']ida-chatbot-embed["'][^>]*>[\s\S]*?<\/script>\s*/gi,
+    ''
+  );
+  cleaned = cleaned.replace(
+    /<script>\s*window\.__idastuudioWidgetConfig[\s\S]*?<\/script>\s*/gi,
+    ''
+  );
+  cleaned = cleaned.replace(
+    /<script[^>]*id=["']ida-local-cart["'][^>]*><\/script>\s*/gi,
+    ''
+  );
+  cleaned = cleaned.replace(
+    /<script[^>]*src=["']\/localhost-cart\.js(?:\?[^"']*)?["'][^>]*><\/script>\s*/gi,
+    ''
+  );
   return { changed: cleaned !== html, html: cleaned };
+}
+
+function normalizeBrokenLinkAttributes(html) {
+  const normalized = html.replace(/\b(href|action)\s*==\s*(["'])/gi, '$1=$2');
+  return { changed: normalized !== html, html: normalized };
+}
+
+function localizeInternalLinks(html) {
+  let localized = html;
+
+  const rewriteAttr = (match, attrPrefix, quote, pathPart) => {
+    const normalizedPath = pathPart && pathPart.length > 0 ? pathPart : '/';
+    return `${attrPrefix}${quote}${normalizedPath}${quote}`;
+  };
+
+  const anchorHrefRegex = new RegExp(
+    `(<a\\b[^>]*?\\bhref\\s*=\\s*)(["'])${INTERNAL_HOST_PATTERN}([^"'\\s>]*)\\2`,
+    'gi'
+  );
+  localized = localized.replace(anchorHrefRegex, rewriteAttr);
+
+  const formActionRegex = new RegExp(
+    `(<form\\b[^>]*?\\baction\\s*=\\s*)(["'])${INTERNAL_HOST_PATTERN}([^"'\\s>]*)\\2`,
+    'gi'
+  );
+  localized = localized.replace(formActionRegex, rewriteAttr);
+
+  return { changed: localized !== html, html: localized };
 }
 
 async function walkHtmlFiles(dir) {
@@ -112,6 +222,25 @@ async function main() {
     const { changed: strippedChatbot, html: strippedHtml } = stripChatbot(content);
     if (strippedChatbot) {
       content = strippedHtml;
+      dirty = true;
+    }
+
+    const { changed: normalizedBrokenAttrs, html: normalizedAttrsHtml } =
+      normalizeBrokenLinkAttributes(content);
+    if (normalizedBrokenAttrs) {
+      content = normalizedAttrsHtml;
+      dirty = true;
+    }
+
+    const { changed: localizedInternalLinks, html: localizedHtml } = localizeInternalLinks(content);
+    if (localizedInternalLinks) {
+      content = localizedHtml;
+      dirty = true;
+    }
+
+    const { changed: injectedLocalScripts, html: injectedHtml } = injectLocalScripts(content);
+    if (injectedLocalScripts) {
+      content = injectedHtml;
       dirty = true;
     }
 
